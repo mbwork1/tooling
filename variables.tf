@@ -7,14 +7,14 @@ variable "ami_id" {
 variable "instance_type" {
   description = "The instance type for the instances"
   type        = string
-  default     = "t2.large"
+  default     = "t3.large"
 }
 
 
 variable "key_name" {
   description = "The key name for the instances"
   type        = string
-  default     = "DevOps_Train2024"
+  default     = "oregon1web"
 }
 
 ###########################
@@ -22,13 +22,13 @@ variable "key_name" {
 ##########################
 variable "security_group_id" {
   type    = string
-  default = "sg-07b8b3043804ede33"
+  default = "sg-0acac897a37874205"
 }
 
-# variable "subnet_id" {
-#   type    = string
-#   default = "subnet-036b6ddb502f8eb8a"
-# }
+variable "subnet_id" {
+  type    = string
+  default = "subnet-040de6219e9432362"
+}
 
 # variable "security_group_id" {
 #   description = "The security group ID to attach to the instance"
@@ -38,11 +38,11 @@ variable "security_group_id" {
 ##################
 #sonarqube db 
 ###################
-variable "subnet_id" {
-  description = "The subnet ID where the instance will be deployed"
-  type        = string
-  default     = "subnet-0ea3d234fba84eef9"
-}
+# variable "subnet_id" {
+#   description = "The subnet ID where the instance will be deployed"
+#   type        = string
+#   default     = "subnet-088fc8010dadc4d2a"
+# }
 
 # variable "db_name" {
 #   description = "The name of the PostgreSQL database"
@@ -66,7 +66,7 @@ variable "subnet_id" {
 # variable "db_security_group_id" {
 #   description = "The security group ID for the PostgreSQL database"
 #   type        = list(string)
-#   default     = ["sg-0f424207f7b50b172"]
+#   default     = ["sg-0c1cfb0a8d4d80c6d"]
 # }
 
 # variable "db_subnet_group" {
@@ -78,13 +78,13 @@ variable "subnet_id" {
 variable "s3_bucket" {
   description = "The name of the S3 bucket for storing Terraform state"
   type        = string
-  default     = "terraform-state-bucket-fusi"
+  default     = "west-eks-tfstate"
 }
 
 variable "dynamodb_table" {
   description = "The name of the DynamoDB table for state locking"
   type        = string
-  default     = "terraform-lock-table"
+  default     = "terraform-state-lock-table"
 }
 
 variable "main-region" {
